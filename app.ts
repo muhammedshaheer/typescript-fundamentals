@@ -5,3 +5,5 @@ let b: string = "String";
 var k: Number = 101;
 
 console.log(a);
+
+enum LanguageKnown { English, Hindi, Malayalam };
