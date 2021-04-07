@@ -1,3 +1,6 @@
+import { StudentInfo } from './IStudentInfo';
+import { Students } from './Student';
+
 console.log("Hello ExecuteAutomation");
 
 let a: number = 10;
@@ -8,13 +11,6 @@ console.log(a);
 
 //Enums
 enum LanguageKnown { English, Hindi, Malayalam };
-
-interface StudentInfo {
-    Name: string,
-    Age: Number,
-    Phone: Number,
-    Language: string
-};
 
 let student: StudentInfo = {
     Name: "Karthik",
@@ -79,15 +75,19 @@ console.log(StudentFullName("Shaheer", "Muhammed"));
 
 /****************************************** */
 //Classes
-class Students {
-
-    constructor(private lName: string, private fName: string) {
-    };
-
-    GetFullName(): string {
-        return this.fName + " " + this.lName;
-    };
-};
 
 let s = new Students("Shaheer", "Muhammed");
 console.log(s.GetFullName());
+
+//Generics
+let studentsListG: Array<StudentInfo> = [
+    { Name: "Prasanth", Age: 26, Phone: 9995012345, Language: LanguageKnown[LanguageKnown.English] }
+];
+
+function GetStudentsListGenerics(students: Array<StudentInfo>) {
+    students.forEach(element => {
+        console.log("Age:" + element.Age + " with Name:" + element.Name + " has Phone:" + element.Phone + " speaks:" + element.Language);
+    })
+};
+
+GetStudentsList(studentsListG);
