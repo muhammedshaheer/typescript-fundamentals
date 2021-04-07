@@ -76,3 +76,22 @@ let StudentFullName = (lName: string, fName: string) => {
 };
 
 console.log(StudentFullName("Shaheer", "Muhammed"));
+
+/****************************************** */
+//Classes
+class Students {
+    private lName: string;
+    private fName: string;
+
+    constructor(lName: string, fName: string) {
+        this.lName = lName;
+        this.fName = fName;
+    };
+
+    GetFullName(): string {
+        return this.fName + " " + this.lName;
+    };
+};
+
+let s = new Students("Shaheer", "Muhammed");
+console.log(s.GetFullName());
