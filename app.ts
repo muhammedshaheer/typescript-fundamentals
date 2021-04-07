@@ -9,16 +9,23 @@ console.log(a);
 //Enums
 enum LanguageKnown { English, Hindi, Malayalam };
 
-let student = {
+interface StudentInfo {
+    Name: string,
+    Age: Number,
+    Phone: Number,
+    Language: string
+};
+
+let student: StudentInfo = {
     Name: "Karthik",
     Age: 30,
-    PhoneNumber: 9847012345,
+    Phone: 9847012345,
     Language: LanguageKnown[LanguageKnown.Hindi]
 };
 
 //Arrays
-let studentsList = [
-    { Name: "Prasanth", Age: 26, PhoneNumber: 9995012345, Language: LanguageKnown[LanguageKnown.English] }
+let studentsList: StudentInfo[] = [
+    { Name: "Prasanth", Age: 26, Phone: 9995012345, Language: LanguageKnown[LanguageKnown.English] }
 ];
 
 studentsList.push(student);
@@ -30,9 +37,9 @@ studentsList.push(student);
 // }
 
 //Function
-function GetStudentsList(students: any[]) {
+function GetStudentsList(students: StudentInfo[]) {
     students.forEach(element => {
-        console.log("Age:" + element.Age + " with Name:" + element.Name + " has Phone:" + element.PhoneNumber + " speaks:" + element.Language);
+        console.log("Age:" + element.Age + " with Name:" + element.Name + " has Phone:" + element.Phone + " speaks:" + element.Language);
     })
 };
 
