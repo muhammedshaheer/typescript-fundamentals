@@ -80,12 +80,8 @@ console.log(StudentFullName("Shaheer", "Muhammed"));
 /****************************************** */
 //Classes
 class Students {
-    private lName: string;
-    private fName: string;
 
-    constructor(lName: string, fName: string) {
-        this.lName = lName;
-        this.fName = fName;
+    constructor(private lName: string, private fName: string) {
     };
 
     GetFullName(): string {
