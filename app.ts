@@ -54,3 +54,18 @@ function GetInfo(info: string = "Happy") {
 
 GetInfo();
 GetInfo("Very Happy");
+
+/*************************************************** */
+//Anonymous Function
+let StudentName = function (lName: string, fName: string) {
+    return fName + "..." + lName;
+};
+
+console.log(StudentName("Shaheer", "Muhammed"));
+
+//Arrow Function
+let StudentFullName = (lName: string, fName: string) => {
+    return fName + ".." + lName;
+};
+
+console.log(StudentFullName("Shaheer", "Muhammed"));
